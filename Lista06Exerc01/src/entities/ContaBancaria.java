@@ -14,10 +14,10 @@ public class ContaBancaria {
 		this.titular = titular;
 	}
 
-	public ContaBancaria(int numero, String titular, double saldo) {
+	public ContaBancaria(int numero, String titular, double depositoInicial) {
 		this.numero = numero;
 		this.titular = titular;
-		this.saldo = saldo;
+		deposito(depositoInicial);
 	}
 
 	public int getNumero() {
@@ -37,7 +37,7 @@ public class ContaBancaria {
 	}
 
 	public String toString() {
-		return "Dados da conta: [Conta " + numero + ", Titular: " + titular + ", Saldo: R$ " + saldo + "]";
+		return "Dados da conta: [Conta " + numero + ", Titular: " + titular + ", Saldo: R$ " + String.format("%.2f", saldo) + "]";
 	}
 
 	public void deposito(double deposito) {
